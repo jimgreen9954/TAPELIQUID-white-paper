@@ -51,9 +51,9 @@ TAPELIQUID 是以晶圆为记账单位的交易所。现货与永续在交易台
 
 现货台费是付出金额的 0.20%，和兑换在同一次钱包确认里。拒绝或失败，两边都不发生。
 
-现在交易的 BEM 永续有资金费、保险基金和自动减仓。资金费每 8 小时在这一对的保证金里结算，封顶 ±0.05%。强平剩余一半进保险基金、一半给强平的人，保险不能提取。保险不够时只减这一对的盈利方。台费进对应链的多签。比特币、ETH、ZEC、UP、TAPE、FAB 和晶体管仍指向旧订单簿，页面不接受新开仓，已有仓位可以平。BSC 的 BEM 永续已经换成新本，可以新开。千分之二进该链多签。
+现在交易的 BEM 永续有资金费、保险基金和自动减仓。资金费每 8 小时在这一对的保证金里结算，封顶 ±0.05%。强平剩余一半进保险基金、一半给强平的人，保险不能提取。保险不够时只减这一对的盈利方。台费进对应链的多签。比特币、ETH、ZEC、UP、TAPE、FAB 列在合约名单里，点进去是各自的结算本，不再改成 BEM。晶体管永续仍不在交易台，不能新开。BSC 的 BEM 永续已经换成新本，可以新开。千分之二进该链多签。
 
-BSC 标记价取 PancakeSwap 池约 10 分钟的时间加权均价。流动性不足时，该均价仍可能在短时间内被带动。X Layer 的页面报价读 Uniswap v3 的 BEM/WOKB 1% 池 0x2CcF8aa17F5DF9Fb5D51C9de12135a913fF29f7A。已经部署的标记合约仍读旧的 v4 池，强平用那个数。X Layer 这一本是旧本，不能新开。晶体管永续的标记仍仅接受收费地址写入。
+BSC 标记价取 PancakeSwap 池约 10 分钟的时间加权均价。流动性不足时，该均价仍可能在短时间内被带动。X Layer 的页面报价读 Uniswap v3 的 BEM/WOKB 1% 池 0x2CcF8aa17F5DF9Fb5D51C9de12135a913fF29f7A。页面上的 X Layer 永续用标记 0x706c4ab8b20f4045623fcc91b24e4746f9776e01，读现货池，可以新开。旧的 v4 标记不再用于这一本。晶体管永续的标记仍仅接受收费地址写入。
 
 下单所用合约地址写死在页面中，不随本机缓存更换。保证金只进入地址一节列出的合约。
 
@@ -61,7 +61,7 @@ BSC 标记价取 PancakeSwap 池约 10 分钟的时间加权均价。流动性�
 
 代码仓库公开，不等于已经通过独立审计。开仓前应以本页与钱包中的合约地址核对。
 
-BSC 的 BEM 永续和工房现货走新本，新开仓可以签。X Layer 的 BEM、比特币、ETH、ZEC、UP、TAPE、FAB 和晶体管仍是旧本，新开仓和吃单先停，已有仓位可以平，挂单可以撤。电路买入走新的现货本。返佣领取仍认上一本，新本的成交还领不了。旧本先停，是因为那些合约不能在部分成交后留下剩余报价。
+BSC 的 BEM 永续和工房现货走新本，新开仓可以签。X Layer 的 BEM 永续也已经换成新本，可以新开。比特币、ETH、ZEC、UP、TAPE、FAB 列在合约名单里，点进去是各自的结算本。晶体管永续仍不在交易台，不能新开。电路买入走新的现货本。返佣领取仍认上一本，新本的成交还领不了。
 
 
 ## 03 交易台
@@ -70,9 +70,9 @@ BSC 的 BEM 永续和工房现货走新本，新开仓可以签。X Layer 的 BE
 
 UP 现货只在 BSC。代币是官网 TapeUP 0xEd99445d72787Adb627cD8588586984DF548CD2F。UP/BNB、UP/BEM、UP/USDT 的买入和卖出都走 tapeup.io 官方池 0xDf40529fa3E797c992272e27B811E59E5f1827Ae，不走 Pancake 的 UP 池。买入先在这个池里换成记在池账上的 UP，同一笔里再提出来，打进签名钱包。卖出先把 UP 存进这个池，再在这个池换成 BEM。UP/BNB 接着把 BEM 换成 BNB，UP/USDT 接着把 BEM 换成 USDT。钱包能合并时，台费和这一笔是一次确认。
 
-永续有两本，不能并成一笔。BSC 的保证金是 USDT。X Layer 的保证金是 USDT0。保证金锁进你所选链上的那一份合约，平台不经手。现在交易的 BEM 永续有资金费、保险基金和自动减仓。资金费每 8 小时在这一对的保证金里结算，单次不超过 ±0.05%。强平剩下一半进保险基金，一半给调用的人，保险基金不能提取。保险不够时，只减这一对赢家的浮盈，不平别人。亏到保证金大约一半，任何人都可以强平。比特币、ETH、ZEC、UP、TAPE 仍是和 BEM 同一类的保证金单。写在页面上的仍是旧结算本，不能新开，只能平仓和撤单。千分之二进该链多签。
+永续有两本，不能并成一笔。BSC 的保证金是 USDT。X Layer 的保证金是 USDT0。保证金锁进你所选链上的那一份合约，平台不经手。现在交易的 BEM 永续有资金费、保险基金和自动减仓。资金费每 8 小时在这一对的保证金里结算，单次不超过 ±0.05%。强平剩下一半进保险基金，一半给调用的人，保险基金不能提取。保险不够时，只减这一对赢家的浮盈，不平别人。亏到保证金大约一半，任何人都可以强平。比特币、ETH、ZEC、UP 在 BSC，TAPE 和 FAB 在 X Layer，各自一本。合约名单里点进去就是这一本。换到另一条链时落到那条链的 BEM，因为这六本不能跨链。千分之二进该链多签。
 
-BSC 的 BEM 永续以 PancakeSwap 池约 10 分钟均价为标记，不以最后一笔成交强平。流动性不足时，该均价仍可能在短时间内被带动。页面上的 X Layer 报价读 BEM/WOKB 1% 池，不在行情上另写两口价。已经部署的标记 0xb4B2ee90D10ECfC7ed36A58e96e03074fA8731Eb 仍读旧的 v4 池，链上那个数高于现货，强平仍用它。这一本是旧本，不能新开。页面使用 0xE8Ed0fE7a7aaEF822b2e5Ce9679ccACcF3aEFF56。旧合约 0xCAC69F02c06bfCa3bFDb1eaF1F4a60e17e718081 的仓位还在，标记仍是 0xba5234cd46ec5eB0DFdf4ac329FF42EB3062B4eA。挂单只有下单的那个钱包能撤，撤单收保证金的 0.20%，余款退回。已经成交的仓位不能撤，只能平仓。没人接的单停在当前委托，订单簿上标「我」，这时没有盈亏。有人接了才变成仓位。仓位写出数量、开仓价、标记价、保证金、盈亏金额和盈亏比。
+BSC 的 BEM 永续以 PancakeSwap 池约 10 分钟均价为标记，不以最后一笔成交强平。流动性不足时，该均价仍可能在短时间内被带动。页面上的 X Layer 报价读 BEM/WOKB 1% 池，不在行情上另写两口价。已经部署的标记 0xb4B2ee90D10ECfC7ed36A58e96e03074fA8731Eb 仍读旧的 v4 池，链上那个数高于现货。页面上的 0x9fD9Ade0272646cc3aD36F1699Fd42CcFE8927c2 读现货标记 0x706c4ab8b20f4045623fcc91b24e4746f9776e01，可以新开。旧标记不再用于这一本。挂单只有下单的那个钱包能撤，撤单收保证金的 0.20%，余款退回。已经成交的仓位不能撤，只能平仓。没人接的单停在当前委托，订单簿上标「我」，这时没有盈亏。有人接了才变成仓位。仓位写出数量、开仓价、标记价、保证金、盈亏金额和盈亏比。
 
 电脑页眉右上角在 BSC 和 X Layer 之间切换，旁边是登录。点登录才进去：可以用浏览器里的钱包，也可以用 OKX、小狐狸或币安扫码。连上之后，BSC 和 X Layer 的签名和交易都发到那部手机。手机没自动弹出时，页眉写着打开钱包点确认。网页自己签不了。进去之后才显示地址和退出。手机页眉右上角只留这两条链。语言、主题、手续费、OTC、红包和其余入口收在左上角菜单里，点开才出现。English、Français、简体中文、한국어、Español 都收在「语言」里，点开才出现。手机底部是市场、交易、账户。手机上连接和退出在账户页。收付款在账户页收成一行，点开才收款或付款。可以收付 TAPE、FAB、两条链的 BEM、UP、OKB 和 BNB。FAB 在 X Layer。UP 在 BSC，是官网代币 0xEd99445d72787Adb627cD8588586984DF548CD2F。两本账不合并，也不另收一笔。BEM 永续留在 BEM，只换链。BSC 上的比特币、ETH、ZEC、UP 切到 X Layer，打开的是 X Layer 的 BEM 永续。X Layer 的 TAPE 永续切到 BSC，打开的是 BSC 的 BEM 永续。BSC 的 BEM 或 BEM/BNB 现货切到 X Layer 的 BEM/OKB，BNB 现货切到 OKB，其余 BSC 现货切到 TAPE/USDT0 池。X Layer 的 BEM/OKB 切回 BSC 的 BEM，OKB 切回 BNB，其余 X Layer 现货切回 BSC 的 BEM。钱包已经连接时，请钱包换到那一条链。没连接时只换交易台，不弹出钱包。
 
@@ -178,7 +178,7 @@ BSC 的 BEM 不进这份合约。一份合约读不到另一条链。X Layer 上
 
 现货买到的币留在签名钱包。永续保证金进入用户所选链上的那一份合约。BSC 与 X Layer 不能并成一笔。
 
-没绑邀请人时，页面先收的千分之二整笔进入该链多签。BSC 是 0xE51C19aE6E4261Ed329CC54F1120Cf0Ae09364Bd。X Layer 是 0xb4D6039394c8B97C3AC3234aa07011B564Fcb88c。绑了邀请人之后，这笔的 6% 付给邀请人，4% 少收交易的人，90% 进入该链多签。现在的现货订单簿和两本永续，合约里的千分之二进该链多签。以前的订单簿、TAPE 池和上一本永续仍进 0x823b9F6A93Ac44Ce5A469823A336c15b6117054D。印鉴减费仍认上一本永续和上一本晶体管，新本的成交还领不了。电路容器的开通费是协议的 BNB，不走这笔台费。比特币、ETH、ZEC、UP、TAPE 在永续页和 BEM 是同一类保证金合约，不是现货买入。页面上的仍是旧结算本，现在不能新开。
+没绑邀请人时，页面先收的千分之二整笔进入该链多签。BSC 是 0xE51C19aE6E4261Ed329CC54F1120Cf0Ae09364Bd。X Layer 是 0xb4D6039394c8B97C3AC3234aa07011B564Fcb88c。绑了邀请人之后，这笔的 6% 付给邀请人，4% 少收交易的人，90% 进入该链多签。现在的现货订单簿和两本永续，合约里的千分之二进该链多签。以前的订单簿、TAPE 池和上一本永续仍进 0x823b9F6A93Ac44Ce5A469823A336c15b6117054D。印鉴减费仍认上一本永续和上一本晶体管，新本的成交还领不了。电路容器的开通费是协议的 BNB，不走这笔台费。比特币、ETH、ZEC、UP、TAPE、FAB 在永续页和 BEM 是同一类保证金合约，不是现货买入。点进去签的是各自那一本。
 
 池子自身的手续费留给流动性提供者。Gas 付给链。
 
@@ -196,11 +196,11 @@ Circuit Punk 只在 nft.tapeliquid.net 合成，不在交易所合成。先在�
 
 ## 15 永续
 
-X Layer 永续页面仍用 0xE8Ed0fE7a7aaEF822b2e5Ce9679ccACcF3aEFF56，是旧本，不能新开。标记 0xb4B2ee90D10ECfC7ed36A58e96e03074fA8731Eb 仍读旧的 v4 池，强平用那个数。另有一份还没接上的标记 0x706c4ab8b20f4045623fcc91b24e4746f9776e01，页面不用，强平也不用。旧合约 0xCAC69F02c06bfCa3bFDb1eaF1F4a60e17e718081 的仓位还在。BSC 永续是 0x0a81a426b29991a777e038d9e4ecce1783804aa0，这一本可以新开。上一本 0xdA4aA9E0aaad6F91835cD19345D49a8fcA8d019A 只平仓。再上一本 0xce3511b6e909c9694826cfd5dbe434d457920eba 不再使用。晶体管永续仍是 0x2b909Ecc36a24D3dD3695a38B11Cb40302454899，是旧本，不能新开。标记从空开始，第一笔要 BSC 多签写入。千分之二进该链多签。没有管理员。
+X Layer 永续是 0x9fD9Ade0272646cc3aD36F1699Fd42CcFE8927c2，可以新开。标记 0x706c4ab8b20f4045623fcc91b24e4746f9776e01 读现货池。BSC 永续是 0x89b2f4a2e0C07864172fB47fbDEa14411AF2e0E0，这一本可以新开。上一本 0x0a81a426b29991a777e038d9e4ecce1783804aa0 只平仓。晶体管永续仍是 0x2b909Ecc36a24D3dD3695a38B11Cb40302454899，是旧本，不能新开。标记从空开始，第一笔要 BSC 多签写入。千分之二进该链多签。没有管理员。
 
 同一份标记只挂这一本 X Layer 永续。BSC 上的 BEM 永续读 Pancake 池子的均价，不读这份标记。浅池仍可能在短时间里影响那条均价。
 
-BSC 永续页上，BEM、比特币、ETH、ZEC、UP 是同一张合约台。比特币和 ETH 各有自己的永续，标记读各自的 Pancake 池约 10 分钟均价，不写进 BEM 那一本。ZEC 读 Pancake 的 ZEC/USDT 池 0x6701B287c8170D6c290C6f4Ef426782bD61Ae310。UP 读官方池 0xDf40529fa3E797c992272e27B811E59E5f1827Ae，标记 0xB1e9FCCa14429b067466bd67bbF68939230d0678，再换成 USDT。上一本 0x5f913f7AFa71c51d69F472b0fE4c3EC74b1132F8 的仓位还在，不再开新仓。TAPE 永续在 X Layer，结算本是 0x9b17D0F6431957661AdD30051de2615cb08A3886，标记 0x5EF3db885b1E3D254a192887965ed514187089A3，千分之二进 X Layer 多签，没有管理员。FAB 永续在 X Layer，结算本是 0x6Bd480BF658FaB7A2cb758c0408A7b3B5B94B431，标记 0x358A948C454B350d54261AfE93616194fbB467C4，读 BEM/FAB 0.9% 池换成美元，千分之二进 X Layer 多签，没有管理员。比特币、ETH、ZEC、UP 的页面地址仍是旧本，没有新开仓。千分之二进 BSC 多签。开仓价不能超过 100000。
+BSC 永续页上，BEM、比特币、ETH、ZEC、UP 是同一张合约台。比特币和 ETH 各有自己的永续，标记读各自的 Pancake 池约 10 分钟均价，不写进 BEM 那一本。ZEC 读 Pancake 的 ZEC/USDT 池 0x6701B287c8170D6c290C6f4Ef426782bD61Ae310。UP 读官方池 0xDf40529fa3E797c992272e27B811E59E5f1827Ae，标记 0xB1e9FCCa14429b067466bd67bbF68939230d0678，再换成 USDT。上一本 0x5f913f7AFa71c51d69F472b0fE4c3EC74b1132F8 的仓位还在，不再开新仓。TAPE 永续在 X Layer，结算本是 0x9b17D0F6431957661AdD30051de2615cb08A3886，标记 0x5EF3db885b1E3D254a192887965ed514187089A3，千分之二进 X Layer 多签，没有管理员。FAB 永续在 X Layer，结算本是 0x6Bd480BF658FaB7A2cb758c0408A7b3B5B94B431，标记 0x358A948C454B350d54261AfE93616194fbB467C4，读 BEM/FAB 0.9% 池换成美元，千分之二进 X Layer 多签，没有管理员。合约名单列出这六本，下单签到上面这些地址。换链落到该链的 BEM。千分之二进 BSC 多签。开仓价不能超过 100000。
 
 TAPE 是 TAPELIQUID 的唯一平台币。只有这一枚，没有第二枚。矿池没有管理员，也不能改排放。
 
@@ -272,9 +272,9 @@ TAPE 代币 0x8f2d517D3d62019CD8D7F08ae178Be05BBb6EBE3。挖矿合约 0x60b1b7ca
 
 ## 22 地址
 
-页面先收的台费，以及现在的现货和永续合约里的千分之二：BSC 多签 0xE51C19aE6E4261Ed329CC54F1120Cf0Ae09364Bd，X Layer 多签 0xb4D6039394c8B97C3AC3234aa07011B564Fcb88c。以前的池子和上一本永续仍进 0x823b9F6A93Ac44Ce5A469823A336c15b6117054D。TAPE 0x8f2d517D3d62019CD8D7F08ae178Be05BBb6EBE3。TAPE 挖矿 0x60b1b7cae1bbd0e84ac3e1e43f933712f3ab67e8。TAPE 池 0x58eaD5b41Cfd3627791D439402dd65571c286484。旧池 0x96dA5acDf8Fb8d3A6Ab742871CEA6167694a8641。流通减去这两口的余额。晶圆锁仓 0xA28390924607F08aaD8d03F512B41b6a1c012Ace。电路锁仓 0x06c877cc158d9ca3547220f9fc156f39bce7013c。回购 0x53fa6A76ce9A3fE08698E04a4E9A674bd77a9DfF。期限质押 0x9D603A45321a3aDbFcAD0E49Fd944Cc281Baa833。以前的锁仓 0x957a7CC82D42C31E79Ee4C668898AA30EC259c0A。现货 0xd398691dff583788e6e2d02dd33b1ffd9fa6b8bd，可以新开。上一本现货 0x68F66fAf7b29E30D0740934F81EB266F6ff17428 和 0x154E82c6a2ac121906D29af0EE81131E93B57860 不再挂新单。TAPELIQUID 电路 0x69F663931209096037474d7C20402232E5C762cA。TAPELIQUID 晶体管 0x3FA393d3081AcCff9E7989619B688235F6d3EE3F。
+页面先收的台费，以及现在的现货和永续合约里的千分之二：BSC 多签 0xE51C19aE6E4261Ed329CC54F1120Cf0Ae09364Bd，X Layer 多签 0xb4D6039394c8B97C3AC3234aa07011B564Fcb88c。以前的池子和上一本永续仍进 0x823b9F6A93Ac44Ce5A469823A336c15b6117054D。TAPE 0x8f2d517D3d62019CD8D7F08ae178Be05BBb6EBE3。TAPE 挖矿 0x60b1b7cae1bbd0e84ac3e1e43f933712f3ab67e8。TAPE 池 0x58eaD5b41Cfd3627791D439402dd65571c286484。旧池 0x96dA5acDf8Fb8d3A6Ab742871CEA6167694a8641。流通减去这两口的余额。晶圆锁仓 0xA28390924607F08aaD8d03F512B41b6a1c012Ace。电路锁仓 0x06c877cc158d9ca3547220f9fc156f39bce7013c。回购 0x53fa6A76ce9A3fE08698E04a4E9A674bd77a9DfF。期限质押 0x9D603A45321a3aDbFcAD0E49Fd944Cc281Baa833。以前的锁仓 0x957a7CC82D42C31E79Ee4C668898AA30EC259c0A。现货 0xF973e81F656553C0236c4E452Af4EC5B6085680a，可以新开。上一本现货 0xd398691dff583788e6e2d02dd33b1ffd9fa6b8bd 只撤单，不再挂新单。更早的 0x154E82c6a2ac121906D29af0EE81131E93B57860 也不再挂新单。TAPELIQUID 电路 0x69F663931209096037474d7C20402232E5C762cA。TAPELIQUID 晶体管 0x3FA393d3081AcCff9E7989619B688235F6d3EE3F。
 
-BSC 永续 0x0a81a426b29991a777e038d9e4ecce1783804aa0，可以新开。上一本 0xdA4aA9E0aaad6F91835cD19345D49a8fcA8d019A 只平仓。X Layer 永续 0xE8Ed0fE7a7aaEF822b2e5Ce9679ccACcF3aEFF56，旧本，不能新开。比特币 0x81A35fDaaEe7dE3dcDa195F312279Bb2aDc0b8B4。ETH 0x564C9f5aa89430ca4f2945b466e34BE8705ee0B8。ZEC 0xdAd8E211ec6c8b43eCe19Da2519C9505CDCbF229。UP 0x7aaf00Dab91e0e6dDDb6093323D0140c11C55aD3，标记 0xB1e9FCCa14429b067466bd67bbF68939230d0678，读官方池 0xDf40529fa3E797c992272e27B811E59E5f1827Ae。上一本 UP 0x5f913f7AFa71c51d69F472b0fE4c3EC74b1132F8 不再开新仓。TAPE 0x9b17D0F6431957661AdD30051de2615cb08A3886。FAB 0x6Bd480BF658FaB7A2cb758c0408A7b3B5B94B431。都是旧本，页面拒绝新开仓。千分之二进该链多签。没有管理员。标记 0xb4B2ee90D10ECfC7ed36A58e96e03074fA8731Eb。晶体管永续 0x2b909Ecc36a24D3dD3695a38B11Cb40302454899，旧本，不能新开。流动性仓位 0x46A15B0b27311cedF172AB29E4f4766fbE7F4364。X Layer 借贷：OKB 0xc417780f4e1F9385BE1ba4cbDe7b40860B2aA8b0，TAPE 0x99CA040580837a2158Bfd0c8d84fcD4B85b6393b，BEM 0xfA211308F9583bEB9aaF724044863b78BfD7B9C1。上一口 OKB 0x57228158cba08c61710ab2644e583c328ec86ea7、上一口 TAPE 0x8d06D78bd5eC97104cE3c7F10A73516fE1Ab4525 和上一口 BEM 0x01264DBDEC9Be07c7C1E942D8C4dcfC72A7691b2 只出不进。更早的 TAPE 0x586B7992A8467290C5a1857FcE7EC8AF72be9445 和更早的 BEM 0xeC55C19F6b0E08FbAd7DECD54bf8c892230fD353 只出不进。更早的 TAPE 0xa49970ffafa28a0e596745e08993df611170f96f、BEM 0x8d3074bdf9412d77269f59cc506e318e5da27914、TAPE 0x425285da21ed3eabe64550d1be7dcabcf6f9e851 和 BEM 0x5ed8551f90acc6395810d8274b019bf13ef1f696 也只出不进。BSC 借贷：BNB 0x0712cCa64B91Ec87cc175aa46cC38b54c8D3Bff3，BEM 0x4127ddA5153042B6E6aFC02316587ab85D985B3A。上一口 BNB 0xd8d981d32b12ea85b739bb667946975d25b0ab53 和上一口 BSC BEM 0xD71C270DFf9DF25245B367489D338629059E5014 只出不进。更早的 BSC BEM 0xd2c7150f7779ded403c3f81a68dab5164b54df28 只出不进。X Layer 期贷 0x29a08A0a0619Fd60a8131477859615F8AD438b58。BSC 期贷 0xf52a684531f8387e5383771887FF5b9FBa116b98。上一本期贷是空的：X Layer 0x087E68a1C6c5978Aab73056f7DCd69fc55d72839，BSC 0x285e93b48e80A7d22CdE47056579074A3842fBcD。更早的空本：X Layer 0x683fb58ee77172626D5B49087DdAc71eF7825d20，BSC 0xBa427D94b001FA1cf0f85E1E54c1E392e9a07610。
+BSC 永续 0x89b2f4a2e0C07864172fB47fbDEa14411AF2e0E0，可以新开。上一本 0x0a81a426b29991a777e038d9e4ecce1783804aa0 只平仓。X Layer 永续 0x9fD9Ade0272646cc3aD36F1699Fd42CcFE8927c2，可以新开。比特币 0x81A35fDaaEe7dE3dcDa195F312279Bb2aDc0b8B4。ETH 0x564C9f5aa89430ca4f2945b466e34BE8705ee0B8。ZEC 0xdAd8E211ec6c8b43eCe19Da2519C9505CDCbF229。UP 0x7aaf00Dab91e0e6dDDb6093323D0140c11C55aD3，标记 0xB1e9FCCa14429b067466bd67bbF68939230d0678，读官方池 0xDf40529fa3E797c992272e27B811E59E5f1827Ae。上一本 UP 0x5f913f7AFa71c51d69F472b0fE4c3EC74b1132F8 不再开新仓。TAPE 0x9b17D0F6431957661AdD30051de2615cb08A3886。FAB 0x6Bd480BF658FaB7A2cb758c0408A7b3B5B94B431。这六本列在合约名单里，点进去签到这一本。换链落到该链的 BEM。千分之二进该链多签。没有管理员。标记 0xb4B2ee90D10ECfC7ed36A58e96e03074fA8731Eb。晶体管永续 0x2b909Ecc36a24D3dD3695a38B11Cb40302454899，旧本，不能新开。流动性仓位 0x46A15B0b27311cedF172AB29E4f4766fbE7F4364。X Layer 借贷：OKB 0xc417780f4e1F9385BE1ba4cbDe7b40860B2aA8b0，TAPE 0x99CA040580837a2158Bfd0c8d84fcD4B85b6393b，BEM 0xfA211308F9583bEB9aaF724044863b78BfD7B9C1。上一口 OKB 0x57228158cba08c61710ab2644e583c328ec86ea7、上一口 TAPE 0x8d06D78bd5eC97104cE3c7F10A73516fE1Ab4525 和上一口 BEM 0x01264DBDEC9Be07c7C1E942D8C4dcfC72A7691b2 只出不进。更早的 TAPE 0x586B7992A8467290C5a1857FcE7EC8AF72be9445 和更早的 BEM 0xeC55C19F6b0E08FbAd7DECD54bf8c892230fD353 只出不进。更早的 TAPE 0xa49970ffafa28a0e596745e08993df611170f96f、BEM 0x8d3074bdf9412d77269f59cc506e318e5da27914、TAPE 0x425285da21ed3eabe64550d1be7dcabcf6f9e851 和 BEM 0x5ed8551f90acc6395810d8274b019bf13ef1f696 也只出不进。BSC 借贷：BNB 0x0712cCa64B91Ec87cc175aa46cC38b54c8D3Bff3，BEM 0x4127ddA5153042B6E6aFC02316587ab85D985B3A。上一口 BNB 0xd8d981d32b12ea85b739bb667946975d25b0ab53 和上一口 BSC BEM 0xD71C270DFf9DF25245B367489D338629059E5014 只出不进。更早的 BSC BEM 0xd2c7150f7779ded403c3f81a68dab5164b54df28 只出不进。X Layer 期贷 0x29a08A0a0619Fd60a8131477859615F8AD438b58。BSC 期贷 0xf52a684531f8387e5383771887FF5b9FBa116b98。上一本期贷是空的：X Layer 0x087E68a1C6c5978Aab73056f7DCd69fc55d72839，BSC 0x285e93b48e80A7d22CdE47056579074A3842fBcD。更早的空本：X Layer 0x683fb58ee77172626D5B49087DdAc71eF7825d20，BSC 0xBa427D94b001FA1cf0f85E1E54c1E392e9a07610。
 
 BSC BEM 0x5ce033B2bFCa3Af30b3e8C8457DeaF776A8b695a。BSC UP 0xEd99445d72787Adb627cD8588586984DF548CD2F。BSC 桥 0xa84B8D3893De6e9922f2B29bE1e1b115845F5E72。X Layer BEM 0x60e62Efa9405d6873C5deaBD4E6CC91c25363952。TapeOut BEM 挖矿 0x7E2E0DC66a3bD9103E69b766afA62d9f7b697b46。
 
