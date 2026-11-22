@@ -207,7 +207,7 @@ UP、TAPE、FAB 页面已改签带 sync() 的本。UP 0xdcc4f9df12bd2550a2d9292f
 
 比特币 0x81060936404F7984675c3928731871032b9E8eEE。ETH 0xB059c8951256A5eBBf9051f7d8D19AE0A1798A82。ZEC 0xc2D7436047ff08afB7A8aB6fFa9cDb73Bb1EDFC6。这三本最高 50 倍。
 
-页面不再发随机红包。commit-reveal 已部署，领取仍走旧合约。正在用的 SealRebate，clerk 仍是 0x585d2DF4B8fDDA783B074555e6F3787e3fCB39D7。新合约的 clerk 是该链多签，领取地址不换。
+页面不再发随机红包。commit-reveal 已部署，领取仍走旧合约。正在用的 SealRebate 是旧份：BSC 0x864EBcf258855f674255D78195598B2fbFAaB8Db，X Layer 0xCbc3Bd75199E8168ecd0Ebfd33051c7642223c8c。两份 clerk 都是 0x585d2DF4B8fDDA783B074555e6F3787e3fCB39D7，不是多签，现在仍能马上提走。返佣先到先得，不为每个用户预留。下一份源码要排 24 小时，还没部署。
 
 同一份标记只挂这一本 X Layer BEM 永续。BSC 上的 BEM 永续读 Pancake 池子的均价，不读这份标记。浅池仍可能在短时间里影响那条均价。
 
