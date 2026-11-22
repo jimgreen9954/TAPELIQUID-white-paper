@@ -199,7 +199,7 @@ Circuit Punk 只在 nft.tapeliquid.net 合成，不在交易所合成。先在�
 
 页面签的是下面这些本。
 
-X Layer 的 BEM 永续是 0x46cBAfCA59873E7115dF7825fdBF659BafAc3a51，可以新开。标记 0xa5F4695e95bf9c67D9B0D7c9C27Ec428a14370dC 读两口池各自的 10 分钟均价。最高 50 倍。现价和均价差过约 1% 不能新开，也不能强平，平仓可以。跟单金库 0x5d6eF9E36B591b50069DA8C535FB56dE73ad8EEe 仍绑旧本 0x9fD9Ade0272646cc3aD36F1699Fd42CcFE8927c2，只取款。新金库已部署并绑着这一本 BEM，页面还没换。BSC 的 BEM 永续是 0x070c66555535e1145275df54f4eEBBfd28d98581，读约 10 分钟均价，可以新开。BSC 金库 0xe9Ef9C5031015fA626eCE1cC8Dc8e5d213F591F5 仍绑 0x89b2f4a2e0C07864172fB47fbDEa14411AF2e0E0。跟单份额的新存入已关闭。晶体管永续不在交易台。
+X Layer 的 BEM 永续是 0x46cBAfCA59873E7115dF7825fdBF659BafAc3a51，可以新开。标记 0xa5F4695e95bf9c67D9B0D7c9C27Ec428a14370dC 读两口池各自的 10 分钟均价。最高 50 倍。现价和均价差过约 3%（296 个 tick）不能新开，也不能强平，平仓可以。跟单金库 0x5d6eF9E36B591b50069DA8C535FB56dE73ad8EEe 仍绑旧本 0x9fD9Ade0272646cc3aD36F1699Fd42CcFE8927c2，只取款。新金库已部署并绑着这一本 BEM，页面还没换。BSC 的 BEM 永续是 0x070c66555535e1145275df54f4eEBBfd28d98581，读约 10 分钟均价，可以新开。BSC 金库 0xe9Ef9C5031015fA626eCE1cC8Dc8e5d213F591F5 仍绑 0x89b2f4a2e0C07864172fB47fbDEa14411AF2e0E0。跟单份额的新存入已关闭。晶体管永续不在交易台。
 
 UP、TAPE、FAB 页面已改签带 sync() 的本。UP 0xdcc4f9df12bd2550a2d9292f8894880a85822734。TAPE 0xe08f0f8e056e65e00b2f80cf63fbc0bfc78bab0d。FAB 0xb87a0d23a9d5c1f63c2dea9331fbaa1b0c027d0a。真钱已跑通。现在每本保险金约 1.004，全体可开名义约 20。1 美元保证金开不了 50 倍。10 美元保证金要开 50 倍，保险金至少 25。旧本里的保险金取不回来。交易少的时候，现价和均价差过约 1% 就不能开仓。页面按每 30 秒一次，用 10 分钟均价算出还要几次「更新价格」，不是按每次 0.5% 去除。不会自己连着记。
 
